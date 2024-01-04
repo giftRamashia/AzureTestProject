@@ -9,12 +9,13 @@ trigger:
 variables:
   IISWebsiteName: 'AzureTestProject'
 
+
 resources:
   pipelines:
-     - pipeline: 'buildPipeline'
-       project: 'AzureTestProject'
-       source: 'Build pipeline'
-       branch: 'main'
+    - pipeline: 'buildPipeline'
+      project: 'AzureTestProject'
+      source: 'Build pipeline'
+      branch: 'main'
 
 stages:
   - stage: DeployWebsite
