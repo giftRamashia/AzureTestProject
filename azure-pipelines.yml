@@ -64,7 +64,7 @@ stages:
     jobs:    
     - deployment: DeployWebsite
       displayName: 'Deploy website'
-      environment: 'Production.DAVE'
+      environment: 'UAT Server'
       strategy:
        runOnce:
          deploy:           
