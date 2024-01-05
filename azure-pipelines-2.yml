@@ -25,7 +25,7 @@ stages:
     jobs:
     - deployment: DeployWebsite
       displayName: 'Deploy website'
-      environment: 'UAT Server'
+      environment: 'UAT Server.HO-DEV-02'
       strategy:
        runOnce:
            deploy:
