@@ -44,6 +44,6 @@ stages:
                   inputs:
                     IISDeploymentType: 'IISWebsite'
                     ActionIISWebsite: 'StopWebsite'
-                    StartStopWebsiteName: 'portal-preprod.namlog.co.za'
+                    StartStopWebsiteName: 'AzureTestProject'
                 
                
