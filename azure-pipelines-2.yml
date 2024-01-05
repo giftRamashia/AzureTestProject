@@ -51,7 +51,7 @@ stages:
                   displayName: 'Deploy IIS website'                
                   inputs:
                     WebSiteName: '${{ variables.IISWebsiteName }}'
-                    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
+                    Package: '$(Pipeline.Workspace)\buildPipeline\AzureTestProject\RoundTheCode.AzureTestProject'
                     TakeAppOfflineFlag: true
 
 
