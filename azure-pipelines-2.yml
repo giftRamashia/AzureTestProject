@@ -38,13 +38,19 @@ stages:
                   artifact: 'AzureTestProject'
 
                 - script: echo $(Pipeline.Workspace)\buildPipeline\AzureTestProject\RoundTheCode.AzureTestProject
-
+                - task: IISWebAppManagementOnMachineGroup@0
+                  name: 'StopIIS'
+                  displayName: 'Stop IIS website'
+                  inputs:
+                    IISDeploymentType: 'IISWebsite'
+                    ActionIISWebsite: 'StopWebsite'
+                    StartStopWebsiteName: '${{ variables.IISWebsiteName }}'
                 - task: IISWebAppDeploymentOnMachineGroup@0
                   name: 'DeployIIS'
                   displayName: 'Deploy IIS website'                
                   inputs:
                     WebSiteName: '${{ variables.IISWebsiteName }}'
-                    Package: '$(Pipeline.Workspace)\buildPipeline\AzureTestProject\RoundTheCode.AzureTestProject'
+                    Package: '$(System.DefaultWorkingDirectory)\**\*.zip'
                     TakeAppOfflineFlag: true
                 
                 - task: IISWebAppManagementOnMachineGroup@0
